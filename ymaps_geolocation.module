@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Defines Yandex maps formatter for the geolocation field.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ymaps_geolocation_theme() {
+    return [
+        'ymaps_geolocation_formatter' => [
+            'variables' => [
+                'lng' => NULL,
+                'lat' => NULL,
+                'height' => '',
+                'width' => '',
+                'map_id' => '',
+            ],
+        ]
+    ];
+}
+
+/**
+ * Return map types.
+ */
+function _ymaps_geolocation_get_map_types() {
+    return [
+        'yandex#map'             => t('Roadmap'),
+        'yandex#satellite'       => t('Satelite'),
+        'yandex#hybrid'          => t('Hybrid'),
+        'yandex#publicMap'       => t('Public map'),
+        'yandex#publicMapHybrid' => t('Hybrid public map'),
+    ];
+}

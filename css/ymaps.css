@@ -1,0 +1,52 @@
+.geo-placemark {
+    position: absolute;
+    width: 48px;
+    height: 62px;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    zoom: .7;
+}
+
+.geo-placemark::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6%;
+    border-radius: 50%;
+    width: 16px;
+    height: 8px;
+    margin: 0 auto;
+    background-color: #004e87;
+    opacity: .3;
+    -webkit-transition-property: width,height,opacity;
+    transition-property: width,height,opacity;
+    will-change: width,height,opacity;
+}
+
+.geo-placemark::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-image: url(https://www.avito.st/s/cc/resources/fda03f34db47.svg);*/
+    background-image: url('data:image/svg+xml;utf8,<svg width="48" height="62" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="50%" y1="100%" x2="50%" y2="0" id="a"><stop stop-color="#0AF" offset="0%"/><stop stop-color="#4BCEFF" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path d="M0,24.0596913 C0,32.420589 4.41553846,41.2733847 11.7526154,50.0997392 C14.3030769,53.1682889 17.0335385,56.0148236 19.7644615,58.5700488 C20.7207692,59.4649475 21.6092308,60.2595519 22.4076923,60.9456562 C22.6878462,61.1868184 22.9370769,61.3969805 23.1526154,61.5752308 C23.2832308,61.683731 23.3746154,61.75804 23.4235385,61.797246 C23.7604615,62.0675847 24.2395385,62.0675847 24.5764615,61.797246 C24.6253846,61.75804 24.7167692,61.683731 24.8473846,61.5752308 C25.0629231,61.3969805 25.3121538,61.1868184 25.5923077,60.9456562 C26.3907692,60.2595519 27.2792308,59.4649475 28.2355385,58.5700488 C30.9664615,56.0148236 33.6969231,53.1682889 36.2473846,50.0997392 C43.5844615,41.2733847 48,32.420589 48,24.0596913 C48,10.771608 37.2549231,0 24,0 C10.7450769,0 0,10.771608 0,24.0596913 Z" fill="url(#a)"/><circle fill="#FFF" cx="24" cy="24" r="11"/></g></svg>');
+    -webkit-transition-property: bottom;
+    transition-property: bottom;
+    will-change: bottom;
+}
+
+.ymaps-geolocation-map {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    background-color:#ccc;
+    overflow:hidden;
+    position: relative;
+}

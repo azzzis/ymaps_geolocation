@@ -1,0 +1,19 @@
+yandex-map-api:
+  version: 1.x
+  js:
+    //api-maps.yandex.ru/2.1/?apikey=AL9U_VsBAAAAZGtXUwMAaP2AiBv7OgqFi2U4a4W7ptm4xWYAAAAAAAAAAADEZr__7kx5VHW8r8RDdS8w8WGz4Q==&lang=ru_RU&mode=debug: { type: external, scope: header }
+
+ymaps-init:
+  version: 1.x
+  css:
+    theme:
+      css/ymaps.css: {}
+
+  js:
+    js/ymaps.init.js: {scope: footer}
+
+  dependencies:
+  - core/jquery
+  - core/drupal
+  - core/jquery.once
+  - core/drupalSettings
