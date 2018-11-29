@@ -1,7 +1,7 @@
 yandex-map-api:
   version: 1.x
   js:
-    //api-maps.yandex.ru/2.1/?apikey=AL9U_VsBAAAAZGtXUwMAaP2AiBv7OgqFi2U4a4W7ptm4xWYAAAAAAAAAAADEZr__7kx5VHW8r8RDdS8w8WGz4Q==&lang=ru_RU&mode=debug: { type: external, scope: header }
+    //api-maps.yandex.ru/2.1/?&lang=ru_RU: { type: external, scope: header }
 
 ymaps-init:
   version: 1.x
