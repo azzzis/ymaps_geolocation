@@ -28,6 +28,7 @@
 
                     var options = drupalSettings.ymaps[mapId];
                     var map = new ymaps.Map(mapId, options.init);
+                    map.controls.get('zoomControl').options.set({size: 'small'});
 
                     if (!options.edit) {
                         var placemark = new ymaps.Placemark(

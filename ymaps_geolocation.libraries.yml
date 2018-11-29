@@ -7,10 +7,10 @@ ymaps-init:
   version: 1.x
   css:
     theme:
-      css/ymaps.css: {}
+      css/ymaps_geolocation.css: {}
 
   js:
-    js/ymaps.init.js: {scope: footer}
+    js/ymaps_geolocation.js: {scope: footer}
 
   dependencies:
   - core/jquery
