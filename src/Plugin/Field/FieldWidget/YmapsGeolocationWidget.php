@@ -81,8 +81,6 @@ class YmapsGeolocationWidget extends WidgetBase {
     ];
 
     $element['#attached']['drupalSettings']['ymaps'][$map_id] = $map;
-
-    $element['#attached']['library'][] = 'ymaps_geolocation/yandex-map-api';
     $element['#attached']['library'][] = 'ymaps_geolocation/ymaps-init';
 
     return $element;

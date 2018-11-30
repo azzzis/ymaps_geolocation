@@ -85,7 +85,6 @@ class YmapsGeolocationFormatter extends FormatterBase
       $elements['#attached']['drupalSettings']['ymaps'][$map_id] = $map;
     }
 
-    $elements['#attached']['library'][] = 'ymaps_geolocation/yandex-map-api';
     $elements['#attached']['library'][] = 'ymaps_geolocation/ymaps-init';
 
     return $elements;
@@ -201,7 +200,7 @@ class YmapsGeolocationFormatter extends FormatterBase
         'auto_zooming' => TRUE,
         'placemark' => [
           'preset' => 'islands#redDotIcon',
-          'balloonContent' => '111',
+          'balloonContent' => '',
         ],
       ] + parent::defaultSettings();
   }

@@ -1,14 +1,8 @@
-yandex-map-api:
-  version: 1.x
-  js:
-    //api-maps.yandex.ru/2.1/?&lang=ru_RU: { type: external, scope: header }
-
 ymaps-init:
   version: 1.x
   css:
     theme:
       css/ymaps_geolocation.css: {}
-
   js:
     js/ymaps_geolocation.js: {scope: footer}
 
@@ -17,3 +11,4 @@ ymaps-init:
   - core/drupal
   - core/jquery.once
   - core/drupalSettings
+  - ymaps_geolocation/yandex_map_api

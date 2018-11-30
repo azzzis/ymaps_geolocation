@@ -27,6 +27,7 @@
 }
 
 .geo-placemark::after {
+    z-index: 10000;
     content: '';
     position: absolute;
     height: 100%;

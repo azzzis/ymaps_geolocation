@@ -22,15 +22,31 @@ function ymaps_geolocation_theme() {
     ];
 }
 
+function ymaps_geolocation_library_info_build() {
+  $config = \Drupal::config('ymaps_geolocation.settings');
+  $api_key = $config->get('api_key');
+  $libraries = [];
+  $libraries['yandex_map_api'] = [
+    'version' => '1.x',
+    'header' => true,
+    'js' => [
+      '//api-maps.yandex.ru/2.1/?api_key='.$api_key.'&lang=ru_RU' => [
+        'type' => 'external',
+      ],
+    ],
+  ];
+  return $libraries;
+}
+
 /**
  * Return map types.
  */
 function _ymaps_geolocation_get_map_types() {
-    return [
-        'yandex#map'             => t('Roadmap'),
-        'yandex#satellite'       => t('Satelite'),
-        'yandex#hybrid'          => t('Hybrid'),
-        'yandex#publicMap'       => t('Public map'),
-        'yandex#publicMapHybrid' => t('Hybrid public map'),
-    ];
+  return [
+    'yandex#map'             => t('Roadmap'),
+    'yandex#satellite'       => t('Satelite'),
+    'yandex#hybrid'          => t('Hybrid'),
+    'yandex#publicMap'       => t('Public map'),
+    'yandex#publicMapHybrid' => t('Hybrid public map'),
+  ];
 }
