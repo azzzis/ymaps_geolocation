@@ -1,12 +1,10 @@
 name: Yandex map geolocation field formatter
-description: Настройка форматирования поля типа geolocation для отображения Yandex maps
+description: Geolocation field formatter module for Yandex maps view
 type: module
 package: Field types
 dependencies:
-  - field
-  - field_ui
-  - geolocation
+  - drupal:field
+  - drupal:field_ui
+  - drupal:geolocation
 
-project: 'ymaps_geolocation'
-version: '8.x-1.0-alpha1'
 core: '8.x'

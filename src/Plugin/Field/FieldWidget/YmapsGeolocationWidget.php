@@ -30,8 +30,8 @@ class YmapsGeolocationWidget extends WidgetBase {
     ];
 
     $value = $items[$delta] ?? [];
-    $lat = $value->lat ?? null;
-    $lng = $value->lng ?? null;
+    $lat = $value->lat ?? NULL;
+    $lng = $value->lng ?? NULL;
 
     // Map information.
     $element['map_container'] = [
@@ -43,7 +43,7 @@ class YmapsGeolocationWidget extends WidgetBase {
         'id' => $map_id,
         'class' => 'ymaps-geolocation-map',
         'style' => 'width: 100%; height: 400px;',
-      ]
+      ],
     ];
 
     $element['lat'] = [
@@ -61,21 +61,23 @@ class YmapsGeolocationWidget extends WidgetBase {
     // Map initialization parameters.
     $map = [
       'init' => [
-        'center' => [$lat,$lng],
+        'center' => [$lat, $lng],
         'zoom' => 16,
         'type' => 'yandex#map',
         'behaviors' => ['scrollZoom', 'dblClickZoom', 'drag'],
-        'controls' => ["zoomControl", "searchControl", "typeSelector",  "fullscreenControl"]
+        'controls' => ["zoomControl", "searchControl", "typeSelector",
+          "fullscreenControl",
+        ],
       ],
       'display' => [
         'width' => '100%',
         'height' => '400px',
-        'auto_centering' => true,
-        'auto_zooming' => false,
+        'auto_centering' => TRUE,
+        'auto_zooming' => FALSE,
       ],
       'placemark' => [
-          'coordinates' => [$lat,$lng],
-          'preset' => '',
+        'coordinates' => [$lat, $lng],
+        'preset' => '',
       ],
       'edit' => TRUE,
     ];
@@ -85,4 +87,5 @@ class YmapsGeolocationWidget extends WidgetBase {
 
     return $element;
   }
+
 }

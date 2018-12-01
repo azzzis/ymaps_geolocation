@@ -18,14 +18,12 @@ use Drupal\node\Entity\Node;
  *   }
  * )
  */
-class YmapsGeolocationFormatter extends FormatterBase
-{
+class YmapsGeolocationFormatter extends FormatterBase {
 
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items, $langcode)
-  {
+  public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
     foreach ($items as $delta => $item) {
@@ -49,7 +47,7 @@ class YmapsGeolocationFormatter extends FormatterBase
       $map_center = $settings['center'];
       $center_arr = ($map_center) ? explode(',', $map_center) : [0, 0];
 
-      //Balloon node token replacement
+      // Balloon node token replacement.
       $replacements = [];
       $entity = $item->getEntity();
       if ($entity->getEntityTypeId() == 'node') {
@@ -93,8 +91,7 @@ class YmapsGeolocationFormatter extends FormatterBase
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state)
-  {
+  public function settingsForm(array $form, FormStateInterface $form_state) {
 
     $settings = $this->getSettings();
 
@@ -143,23 +140,23 @@ class YmapsGeolocationFormatter extends FormatterBase
       '#default_value' => $settings['controls'],
     ];
 
-    $element['auto_centering'] = array(
+    $element['auto_centering'] = [
       '#type' => 'checkbox',
       '#title' => t('Map auto centering'),
       '#default_value' => $settings['auto_centering'],
-    );
+    ];
 
-    $element['auto_zooming'] = array(
+    $element['auto_zooming'] = [
       '#type' => 'checkbox',
       '#title' => t('Map auto zooming'),
       '#default_value' => $settings['auto_zooming'],
-    );
+    ];
 
     $element['placemark'] = [
       '#type' => 'fieldset',
       '#title' => t('Placemark options'),
-      '#collapsible' => TRUE, // Added
-      '#collapsed' => FALSE,  // Added
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
     ];
 
     $element['placemark']['preset'] = [
@@ -186,23 +183,22 @@ class YmapsGeolocationFormatter extends FormatterBase
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings()
-  {
+  public static function defaultSettings() {
     return [
-        'width' => '100%',
-        'height' => '400px',
-        'center' => '38.975996,45.040216',
-        'zoom' => '10',
-        'type' => 'yandex#map',
-        'behaviors' => '["scrollZoom","dblClickZoom","drag"]',
-        'controls' => '["zoomControl", "searchControl", "typeSelector",  "fullscreenControl", "routeButtonControl"]',
-        'auto_centering' => TRUE,
-        'auto_zooming' => TRUE,
-        'placemark' => [
-          'preset' => 'islands#redDotIcon',
-          'balloonContent' => '',
-        ],
-      ] + parent::defaultSettings();
+      'width' => '100%',
+      'height' => '400px',
+      'center' => '38.975996,45.040216',
+      'zoom' => '10',
+      'type' => 'yandex#map',
+      'behaviors' => '["scrollZoom","dblClickZoom","drag"]',
+      'controls' => '["zoomControl", "searchControl", "typeSelector",  "fullscreenControl", "routeButtonControl"]',
+      'auto_centering' => TRUE,
+      'auto_zooming' => TRUE,
+      'placemark' => [
+        'preset' => 'islands#redDotIcon',
+        'balloonContent' => '',
+      ],
+    ] + parent::defaultSettings();
   }
 
 }

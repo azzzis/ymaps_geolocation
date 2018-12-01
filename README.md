@@ -1,22 +1,41 @@
 # Ymaps Geolocation field formatter
 
-Модуль-форматтер для поля типа Geolocation. Дает возможность использовать Yandex map для вывода точки на карте с координатами, которые хранятся в Lat и Lang поля Geolocation.
+CONTENTS OF THIS FILE
+---------------------
+* Introduction
+* Requirements
+* Installation
+* Configuration
 
-Модуль можно так же использовать как для виджета выбора точки в редактировании ноды.
+INTRODUCTION
+------------
+Yandex geolocation field formatter is a simple module for view 
+Geolocation Field as Yandex map. 
 
-В настройках для балуна метки, можно использовать токены ноды в том числе и для вывода содержимого полей ноды.
+Geolocation Field provides a field type to store geographical locations as pairs 
+of latitude and longitude (lat, lng). 
 
-## Установка и настройка модуля
+This module tested with 8.x-1.11 version of geolocation field module. After 
+installation you can find  "Geolocation Yandex map" formatter for display 
+and edit Geolocation field.
 
-1. Установить модуль https://www.drupal.org/project/geolocation
-2. Установить этот модуль
-3. На странице настроек /admin/config/content/ymaps_geolocation прописать API KEY для Yandex map, который нужно получить на странице https://tech.yandex.ru/maps/keys/
-3. Создать поле типа Geolocation 
-5. На странице настройки отображения формы типа материала выбрать форматтер Geolocation Yandex map
-6. На странице настройки отображения типа материала выбрать форматтер Geolocation Yandex map и установить необходимые настройки для Yandex-карты.
+REQUIREMENTS
+------------
+This module requires the following modules:
 
-Прочитать описание модуля можно здесь:
-http://big-gu.ru/blog/modul-yandex-map-dlya-drupal-8
+* Geolocation (https://www.drupal.org/project/geolocation)
 
-Исходники:
-https://github.com/azzzis/ymaps_geolocation
+INSTALLATION
+------------
+
+* Install https://www.drupal.org/project/geolocation
+* Install this module as usual
+
+CONFIGURATION
+-------------
+
+* Setup Yandex API key (https://tech.yandex.ru/maps/keys/) 
+  on admin page /admin/config/content/ymaps_geolocation
+* Create Geolocation field 
+* Select for created field display type Geolocation Yandex map
+* Select for created field display form type Geolocation Yandex map.
