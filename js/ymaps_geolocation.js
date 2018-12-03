@@ -37,7 +37,7 @@
               Drupal.geolocationYmap.autoZooming(map);
             }
             else {
-              options.init.center = [55.75370903771494, 37.61981338262558 ];
+              options.init.center = [55.75370903771494, 37.61981338262558];
               map = new ymaps.Map(mapId, options.init);
             }
 

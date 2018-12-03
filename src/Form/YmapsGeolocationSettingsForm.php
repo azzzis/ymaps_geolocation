@@ -42,7 +42,7 @@ class YmapsGeolocationSettingsForm extends ConfigFormBase {
 
     $form['center'] = [
       '#type' => 'fieldset',
-      '#title' => t('Widget center map'),
+      '#title' => $this->t('Widget center map'),
       '#collapsible' => TRUE,
       '#collapsed' => FALSE,
     ];
