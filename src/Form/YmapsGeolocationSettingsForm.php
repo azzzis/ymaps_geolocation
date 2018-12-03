@@ -40,6 +40,25 @@ class YmapsGeolocationSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('api_key'),
     ];
 
+    $form['center'] = [
+      '#type' => 'fieldset',
+      '#title' => t('Widget center map'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+    ];
+
+    $form['center']['center_lat'] = [
+      '#title' => $this->t('Map center latitude'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('center_lat'),
+    ];
+
+    $form['center']['center_lng'] = [
+      '#title' => $this->t('Map center longitude'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('center_lng'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -52,6 +71,8 @@ class YmapsGeolocationSettingsForm extends ConfigFormBase {
     // Save the updated settings.
     $this->config('ymaps_geolocation.settings')
       ->set('api_key', $values['api_key'])
+      ->set('center_lat', $values['center_lat'])
+      ->set('center_lng', $values['center_lng'])
       ->save();
 
     parent::submitForm($form, $form_state);

@@ -30,8 +30,13 @@ class YmapsGeolocationWidget extends WidgetBase {
     ];
 
     $value = $items[$delta] ?? [];
-    $lat = $value->lat ?? NULL;
-    $lng = $value->lng ?? NULL;
+
+    $config = \Drupal::config('ymaps_geolocation.settings');
+    $center_lat = $config->get('center_lat');
+    $center_lng = $config->get('center_lng');
+
+    $lat = $value->lat ?? $center_lat;
+    $lng = $value->lng ?? $center_lng;
 
     // Map information.
     $element['map_container'] = [
@@ -62,12 +67,10 @@ class YmapsGeolocationWidget extends WidgetBase {
     $map = [
       'init' => [
         'center' => [$lat, $lng],
-        'zoom' => 16,
+        'zoom' => 14,
         'type' => 'yandex#map',
         'behaviors' => ['scrollZoom', 'dblClickZoom', 'drag'],
-        'controls' => ["zoomControl", "searchControl", "typeSelector",
-          "fullscreenControl",
-        ],
+        'controls' => ["zoomControl", "typeSelector", "fullscreenControl"],
       ],
       'display' => [
         'width' => '100%',

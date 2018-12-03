@@ -25,10 +25,36 @@
         mapInit: function (mapId) {
 
           var options = drupalSettings.ymaps[mapId];
-          var map = new ymaps.Map(mapId, options.init);
-          map.controls.get('zoomControl').options.set({size: 'small'});
+          var map;
 
-          if (!options.edit) {
+
+          if (options.edit) {
+
+            // Field geolocation Yandex map edit widget.
+            if (options.placemark.coordinates[0] && options.placemark.coordinates[1]) {
+              map = new ymaps.Map(mapId, options.init);
+              Drupal.geolocationYmap.autoCentering(map);
+              Drupal.geolocationYmap.autoZooming(map);
+            }
+            else {
+              options.init.center = [55.75370903771494, 37.61981338262558 ];
+              map = new ymaps.Map(mapId, options.init);
+            }
+
+            map.events.add('boundschange', function (event) {
+              var newCenter = event.get('newCenter');
+              $('.field-ymaps-lat-' + mapId).val(newCenter[0]);
+              $('.field-ymaps-lng-' + mapId).val(newCenter[1]);
+            });
+
+            $('.field-group-tabs-wrapper ul li').click(function () {
+              map.container.fitToViewport();
+            });
+          }
+          else {
+
+            map = new ymaps.Map(mapId, options.init);
+
             var placemark = new ymaps.Placemark(
               {
                 type: 'Point',
@@ -51,23 +77,11 @@
             if (options.display.auto_zooming || !options.init.zoom) {
               Drupal.geolocationYmap.autoZooming(map);
             }
+
           }
-          else {
 
-            // Field geolocation Yandex map edit widget.
-            Drupal.geolocationYmap.autoCentering(map);
-            Drupal.geolocationYmap.autoZooming(map);
+          map.controls.get('zoomControl').options.set({size: 'small'});
 
-            map.events.add('boundschange', function (event) {
-              newCenter = event.get('newCenter');
-              $('.field-ymaps-lat-' + mapId).val(newCenter[0]);
-              $('.field-ymaps-lng-' + mapId).val(newCenter[1]);
-            });
-
-            $('.field-group-tabs-wrapper ul li').click(function () {
-              map.container.fitToViewport();
-            });
-          }
 
           return map;
         },
