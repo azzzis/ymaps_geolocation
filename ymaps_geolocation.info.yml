@@ -5,6 +5,6 @@ package: Field types
 dependencies:
   - drupal:field
   - drupal:field_ui
-  - drupal:geolocation
+  - geolocation:geolocation
 
 core: '8.x'
