@@ -69,7 +69,7 @@ class YmapsGeolocationWidget extends WidgetBase {
         'center' => [$lat, $lng],
         'zoom' => 16,
         'type' => 'yandex#map',
-        'behaviors' => ['scrollZoom', 'dblClickZoom', 'drag'],
+        'behaviors' => ['dblClickZoom', 'drag'],
         'controls' => ["zoomControl", "typeSelector", "fullscreenControl"],
       ],
       'display' => [
