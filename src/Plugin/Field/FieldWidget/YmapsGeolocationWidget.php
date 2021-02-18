@@ -46,7 +46,7 @@ class YmapsGeolocationWidget extends WidgetBase {
       '#suffix' => '<div class="geo-placemark"></div>',
       '#attributes' => [
         'id' => $map_id,
-        'class' => 'ymaps-geolocation-map',
+        'class' => ['ymaps-geolocation-map'],
         'style' => 'width: 100%; height: 400px;',
       ],
     ];
