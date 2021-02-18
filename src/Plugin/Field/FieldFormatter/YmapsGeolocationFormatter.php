@@ -51,7 +51,7 @@ class YmapsGeolocationFormatter extends FormatterBase {
       $replacements = [];
       $entity = $item->getEntity();
       if ($entity->getEntityTypeId() == 'node') {
-        $replacements['node'] = Node::load($entity->id());
+        $replacements['node'] = $entity;
       }
       $balloonContent = $settings['placemark']['balloonContent'];
       $balloonContent = \Drupal::token()->replace($balloonContent, $replacements);
