@@ -8,3 +8,8 @@ dependencies:
   - geolocation:geolocation
 
 core_version_requirement: ^8 || ^9
+
+# Information added by Drupal.org packaging script on 2021-02-19
+version: '8.x-1.3'
+project: 'ymaps_geolocation'
+datestamp: 1613732560
